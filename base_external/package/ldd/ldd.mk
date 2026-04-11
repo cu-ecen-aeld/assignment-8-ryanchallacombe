@@ -7,13 +7,13 @@
 
 
 #AESD_ASSIGNMENTS_VERSION = 91e915ca155d0bd2e2b13fffda97b2e5c14a4df9
-LDD_VERSION = 91e915ca155d0bd2e2b13fffda97b2e5c14a4df9
+LDD_VERSION = 5c3cae6ddc96b8645dfa6f6bc4ddbba08aae8789
 
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
 LDD_SITE = git@github.com:cu-ecen-aeld/assignment-7-ryanchallacombe.git
-LDD_METHOD = git
+LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES
 LDD_MODULE_SUBDIRS += scull
 LDD_MODULE_SUBDIRS += misc-modules
