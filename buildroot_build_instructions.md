@@ -166,5 +166,8 @@ scp -P 10022 root@localhost:/tmp/assignment4-result.txt .
 4. Navigate to /home/ryan/projects/assignment-4-ryanchallacombe
 5. run `./build.sh`
 
+### Assignment 7 part 2 
+
+1. Ran build.sh. Had some errors with pulling the aesd-assignments git. Ran clean.sh, followed by build.sh. This worked. 
 
 
