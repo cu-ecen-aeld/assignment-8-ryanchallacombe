@@ -1,5 +1,6 @@
 config BR2_PACKAGE_LDD
 	bool "ldd"
+	depends on BR2_LINUX_KERNEL
 	help
 	  New module LDD, new for AELD assignment 7 part 2. 
 	  supports building and installing the misc-modules and scull components into the root filesystem.

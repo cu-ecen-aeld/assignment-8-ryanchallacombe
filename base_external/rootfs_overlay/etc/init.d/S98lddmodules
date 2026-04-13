@@ -1,0 +1,37 @@
+#!/bin/sh
+##########################################################################
+# Perform operations on startup to load the scull driver and on shutdown to unload. 
+# Perform operations on startup to load the faulty driver and on shutdown to unload. 
+# Run modprobe on the hello module to load on startup and use rmmod to remove on shutdown.
+##########################################################################
+
+case $1 in 
+	start)
+
+		echo "Starting 'scull' module"
+		cd /usr/bin/
+		./scull_load
+		#modprobe scull
+		#echo "Starting 'faulty' module"
+		#modprobe faulty
+		#echo "Starting 'hello' module"
+		#modprobe hello
+		;;
+	stop)
+		echo "Stopping 'scull' module"
+		#start-stop-daemon --stop --name aesdsocket
+		cd /usr/bin/
+		./scull_unload
+		#rmmod scull
+		#echo "Stopping 'faulty' module"
+		#rmmod faulty
+		#echo "Stopping 'hello' module"
+		#rmmod hello
+
+		;;
+	*)
+		echo "Usage: $0 {start | stop}"
+	exit 1
+esac
+
+exit 0
