@@ -11,22 +11,19 @@ case $1 in
 		echo "Starting 'scull' module"
 		cd /usr/bin/
 		./scull_load
-		#modprobe scull
-		#echo "Starting 'faulty' module"
-		#modprobe faulty
-		#echo "Starting 'hello' module"
-		#modprobe hello
+		echo "Starting 'faulty' module"
+		./module_load faulty
+		echo "Starting 'hello' module"
+		modprobe hello
 		;;
 	stop)
 		echo "Stopping 'scull' module"
-		#start-stop-daemon --stop --name aesdsocket
 		cd /usr/bin/
 		./scull_unload
-		#rmmod scull
-		#echo "Stopping 'faulty' module"
-		#rmmod faulty
-		#echo "Stopping 'hello' module"
-		#rmmod hello
+		echo "Stopping 'faulty' module"
+		./module_unload faulty
+		echo "Stopping 'hello' module"
+		rmmod hello
 
 		;;
 	*)
