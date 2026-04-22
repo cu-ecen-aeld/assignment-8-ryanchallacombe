@@ -171,3 +171,15 @@ scp -P 10022 root@localhost:/tmp/assignment4-result.txt .
 1. Ran build.sh. Had some errors with pulling the aesd-assignments git. Ran clean.sh, followed by build.sh. This worked. 
 
 
+# Assignment 8
+Installing strace on buildroot build
+> cd projects/assignment-5-ryanchallacombe/
+> make menuconfig
+# find and enable strace. save/exit
+
+save config file
+> cd ..
+> ./save-config.sh
+
+Done!
+
