@@ -182,17 +182,31 @@ save config file
 Done!
 
 ## Steps for adding aesdchar module
-- write start/stop sh script for aesdchar. 
-Use rootfs overlay??
+- write start/stop sh script for aesdchar: S97aesdcharmodule
+- create the dir base-external/package/aesdchar-module for the package
+	- added the config and .mk files
+	- the .mk will:
+			- make and install driver
+			- use commit hash for assignments 3 repo
+			- install start/stop script
 - Update aesd-assignments.mk in /home/ryan/projects/assignment-5-ryanchallacombe/base_external/package/aesd-assignments
-	- make and install driver
 	- update commit hash for assignments 3 repo
-	- install start/stop script??
 
-1. Push start stop daemon script to repo. Update the aesd-assignments.mk file with the commit hash
-2. Navigate to /home/ryan/projects/assignment-4-ryanchallacombe/buildroot
-3. run `make aesd-assignments-rebuild`
-4. Navigate to /home/ryan/projects/assignment-4-ryanchallacombe
-5. run `./build.sh`
+- Update Config.in in /home/ryan/projects/assignment-5-ryanchallacombe/base_external to add a line for the aesdchar driver module package
+- Push all updates to their repo (the buildroot repo, a5)
+- Navigate to /home/ryan/projects/assignment-5-ryanchallacombe/buildroot
+
+- run `make aesd-assignments-rebuild`
+- Navigate to /home/ryan/projects/assignment-5-ryanchallacombe
+- run `./build.sh`
+
+### DID NOT DO THESE BUT MIGHT NEED TO 
+- Run `make menuconfig` and add the aesdchar module
+- Run the save-config.sh script in the root folder to save the configuration
+- run $ cat base_external/configs/aesd_qemu_defconfig and see that the lines below have been added to the file
+### DID NOT DO THESE BUT MIGHT NEED TO 
+
+
+
 
 

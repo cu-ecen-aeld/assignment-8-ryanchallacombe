@@ -14,12 +14,14 @@ AESD_ASSIGNMENTS_VERSION = 0ff4aa9d62de4fa4651c83f3f05971e5b2c2a5a7		# updated f
 AESD_ASSIGNMENTS_SITE = git@github.com:cu-ecen-aeld/assignments-3-and-later-ryanchallacombe.git
 AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
+AESD_ASSIGNMENTS_SUBDIRS = server
+AESD_ASSIGNMENTS_SUBDIRS += finder-app
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app all
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/server all 
-	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/aesd-char-driver all 
 endef
+
 
 define AESD_ASSIGNMENTS_INSTALL_TARGET_CMDS
 	$(INSTALL) -d 0755 $(@D)/conf/ $(TARGET_DIR)/etc/finder-app/conf/
@@ -32,11 +34,7 @@ define AESD_ASSIGNMENTS_INSTALL_TARGET_CMDS
 
 	$(INSTALL) -m 0755 $(@D)/server/aesdsocket $(TARGET_DIR)/usr/bin
 	$(INSTALL) -m 0755 $(@D)/server/aesdsocket-start-stop.sh $(TARGET_DIR)/etc/init.d/S99aesdsocket
-
-	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar_load $(TARGET_DIR)/usr/bin
-	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar_unload $(TARGET_DIR)/usr/bin
 									
 endef
-#$(INSTALL) -m 0755 $(@D)/aesd-char-driver/S97aesdcharmodule $(TARGET_DIR)/etc/init.d/S97aesdcharmodule
 
 $(eval $(generic-package))

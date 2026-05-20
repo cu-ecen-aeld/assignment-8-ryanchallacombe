@@ -1,0 +1,4 @@
+config BR2_PACKAGE_AESDCHAR-MODULE
+	bool "aesdchar-module"
+	help
+	  assignment 8 with aesdchar module
