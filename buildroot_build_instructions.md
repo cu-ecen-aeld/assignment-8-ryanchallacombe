@@ -149,9 +149,6 @@ Discovered that we can run just $ finder-test.sh (instead of ./finder-test.sh) b
 Now I need to go back and edit the script, push to git, update the hash in the aesd-assignments.mk file, run make aesd-assignments-rebuild
 the ./build.sh again 
 
-
-
-
 Verification
 1. Run finder-test.sh from the root of qemu (see video)
 
@@ -172,7 +169,8 @@ scp -P 10022 root@localhost:/tmp/assignment4-result.txt .
 
 
 # Assignment 8
-Installing strace on buildroot build
+
+## Installing strace on buildroot build
 > cd projects/assignment-5-ryanchallacombe/
 > make menuconfig
 # find and enable strace. save/exit
@@ -182,4 +180,19 @@ save config file
 > ./save-config.sh
 
 Done!
+
+## Steps for adding aesdchar module
+- write start/stop sh script for aesdchar. 
+Use rootfs overlay??
+- Update aesd-assignments.mk in /home/ryan/projects/assignment-5-ryanchallacombe/base_external/package/aesd-assignments
+	- make and install driver
+	- update commit hash for assignments 3 repo
+	- install start/stop script??
+
+1. Push start stop daemon script to repo. Update the aesd-assignments.mk file with the commit hash
+2. Navigate to /home/ryan/projects/assignment-4-ryanchallacombe/buildroot
+3. run `make aesd-assignments-rebuild`
+4. Navigate to /home/ryan/projects/assignment-4-ryanchallacombe
+5. run `./build.sh`
+
 

@@ -5,3 +5,5 @@ config BR2_PACKAGE_AESD_ASSIGNMENTS
 	  Used to understand buildroot external trees and package builds.
 	  updated for assignment 5 part 2 to include aesdsocket application
 	  as well as the start-stop-daemon script
+	  updated for assignment 7 with ldd modules
+	  updated for assignment 8 with aesdchar module
