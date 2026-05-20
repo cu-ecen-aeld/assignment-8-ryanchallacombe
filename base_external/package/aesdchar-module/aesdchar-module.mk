@@ -17,14 +17,11 @@ AESDCHAR_MODULE_GIT_SUBMODULES = YES
 AESDCHAR_MODULE_MODULE_SUBDIRS = aesd-char-driver
 AESDCHAR_MODULE_MAKE_OPTS = KERNELDIR=$(LINUX_DIR)
 
-$(eval $(kernel-module))
-
 define AESDCHAR_MODULE_INSTALL_TARGET_CMDS
-
 	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar_load $(TARGET_DIR)/usr/bin
 	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar_unload $(TARGET_DIR)/usr/bin
-									
+	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/S97aesdcharmodule $(TARGET_DIR)/etc/init.d/S97aesdcharmodule									
 endef
-#$(INSTALL) -m 0755 $(@D)/aesd-char-driver/S97aesdcharmodule $(TARGET_DIR)/etc/init.d/S97aesdcharmodule
 
+$(eval $(kernel-module))
 $(eval $(generic-package))

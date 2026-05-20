@@ -201,10 +201,12 @@ Done!
 - Run the save-config.sh script in the root folder to save the configuration
 - run $ cat base_external/configs/aesd_qemu_defconfig and see that the lines below have been added to the file
 	BR2_PACKAGE_AESDCHAR-MODULE=y
-	
 - Navigate to /home/ryan/projects/assignment-5-ryanchallacombe
 - run `./build.sh`
-
+	This appeared to work but the aesdchar module was not in the image
+- run `make aesdchar-module-rebuild`
+- run `./build.sh`
+	This worked and included the aesdchar module
 
 
 
