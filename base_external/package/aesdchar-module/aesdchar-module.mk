@@ -11,11 +11,13 @@ AESDCHAR_MODULE_VERSION = 0ff4aa9d62de4fa4651c83f3f05971e5b2c2a5a7		# updated fo
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
-AESDCHAR_MODULE_SITE = git@github.com:cu-ecen-aeld/assignments-3-and-later-ryanchallacombe.git
+AESDCHAR_MODULE_SITE = 'git@github.com:cu-ecen-aeld/assignments-3-and-later-ryanchallacombe.git'
 AESDCHAR_MODULE_SITE_METHOD = git
 AESDCHAR_MODULE_GIT_SUBMODULES = YES
-AESDCHAR_MODULE_SUBDIRS += aesd-char-driver
+AESDCHAR_MODULE_MODULE_SUBDIRS = aesd-char-driver
+AESDCHAR_MODULE_MAKE_OPTS = KERNELDIR=$(LINUX_DIR)
 
+$(eval $(kernel-module))
 
 define AESDCHAR_MODULE_INSTALL_TARGET_CMDS
 
@@ -25,5 +27,4 @@ define AESDCHAR_MODULE_INSTALL_TARGET_CMDS
 endef
 #$(INSTALL) -m 0755 $(@D)/aesd-char-driver/S97aesdcharmodule $(TARGET_DIR)/etc/init.d/S97aesdcharmodule
 
-$(eval $(kernel-module))
 $(eval $(generic-package))

@@ -197,14 +197,18 @@ Done!
 - Navigate to /home/ryan/projects/assignment-5-ryanchallacombe/buildroot
 
 - run `make aesd-assignments-rebuild`
-- Navigate to /home/ryan/projects/assignment-5-ryanchallacombe
-- run `./build.sh`
-
-### DID NOT DO THESE BUT MIGHT NEED TO 
 - Run `make menuconfig` and add the aesdchar module
 - Run the save-config.sh script in the root folder to save the configuration
 - run $ cat base_external/configs/aesd_qemu_defconfig and see that the lines below have been added to the file
-### DID NOT DO THESE BUT MIGHT NEED TO 
+	BR2_PACKAGE_AESDCHAR-MODULE=y
+	
+- Navigate to /home/ryan/projects/assignment-5-ryanchallacombe
+- run `./build.sh`
+
+
+
+
+
 
 
 
