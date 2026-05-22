@@ -208,6 +208,11 @@ Done!
 - run `./build.sh`
 	This worked and included the aesdchar module
 
+Repeat these 2 steps for each module code update
+- run `make aesdchar-module-rebuild`
+- run `./build.sh`
+	This worked and included the aesdchar module
+
 
 
 
