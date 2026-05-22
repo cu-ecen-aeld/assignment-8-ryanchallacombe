@@ -6,7 +6,7 @@
 ##############################################################
 
 # Fill up the contents below in order to reference your assignment 3 git contents
-AESDCHAR_MODULE_VERSION = 0ff4aa9d62de4fa4651c83f3f05971e5b2c2a5a7		# updated for assignment 8
+AESDCHAR_MODULE_VERSION = 12c4f297bd56dc4a7987b5a3cbae595667afe34d		# updated for assignment 8
 
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
