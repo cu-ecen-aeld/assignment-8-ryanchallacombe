@@ -6,7 +6,7 @@
 ##############################################################
 
 # Fill up the contents below in order to reference your assignment 3 git contents
-AESDCHAR_MODULE_VERSION = 12c4f297bd56dc4a7987b5a3cbae595667afe34d		# updated for assignment 8
+AESDCHAR_MODULE_VERSION = aa6e6dd2449bbd69089d070d07b359c31e5de3c3		# updated for assignment 9
 
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
@@ -20,7 +20,9 @@ AESDCHAR_MODULE_MAKE_OPTS = KERNELDIR=$(LINUX_DIR)
 define AESDCHAR_MODULE_INSTALL_TARGET_CMDS
 	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar_load $(TARGET_DIR)/usr/bin
 	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/aesdchar_unload $(TARGET_DIR)/usr/bin
-	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/S97aesdcharmodule $(TARGET_DIR)/etc/init.d/S97aesdcharmodule									
+	$(INSTALL) -m 0755 $(@D)/aesd-char-driver/S97aesdcharmodule $(TARGET_DIR)/etc/init.d/S97aesdcharmodule
+
+	$(INSTALL) -m 0755 $(@D)/assignment-autotest/test/assignment9/* $(TARGET_DIR)/usr/bin
 endef
 
 $(eval $(kernel-module))
